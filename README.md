@@ -31,7 +31,7 @@ Most high-quality PDF parsers today are either:
 
 ## Installation
 
-```bash
+```sh
 pip install pubpdf
 ```
 
@@ -86,10 +86,15 @@ See [open issues](https://github.com/heloint/pubpdf/issues) for details and prog
 
 Contributions are welcome! Whether it's a bug report, a failing test PDF, a feature idea, or a pull request — please open an issue first for anything non-trivial so we can discuss the approach.
 
-```bash
+```sh
 git clone https://github.com/heloint/pubpdf.git
 cd pubpdf
 pip install -e ".[dev]"
 pytest
 ```
 
+Upload to PyPI:
+```sh
+python3 -m build
+twine upload dist/*
+```

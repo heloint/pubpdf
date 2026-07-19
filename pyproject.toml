@@ -4,9 +4,58 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pubpdf"
-version = "0.0.1"
+version = "0.0.2"
 description = "MIT-licensed structured extraction for scientific and academic PDFs (coming soon)"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.9"
 authors = [{name = "Daniel Majer", email = "majerdaniel93@gmail.com"}]
+keywords = ["pdf", "pdf-parsing", "scientific", "bioinformatics", "rag", "nlp"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Text Processing",
+]
+
+# Core dependencies — always installed, kept minimal on purpose.
+dependencies = [
+    "pdfminer.six>=20140915",
+]
+
+[project.optional-dependencies]
+# Optional: DataFrame output for tables (pip install pubpdf[pandas])
+pandas = [
+    "pandas>=2.0",
+]
+
+# Optional: OCR fallback for scanned PDFs (pip install pubpdf[ocr])
+ocr = [
+    "pytesseract>=0.3",
+    "pdf2image>=1.16",
+]
+
+# Everything a contributor needs (pip install pubpdf[dev])
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "mypy>=1.10",
+    "build>=1.2",
+    "twine>=5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/heloint/pubpdf"
+Repository = "https://github.com/heloint/pubpdf"
+Issues = "https://github.com/heloint/pubpdf/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pubpdf*"]
