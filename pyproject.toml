@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pubpdf"
+version = "0.0.1"
+description = "MIT-licensed structured extraction for scientific and academic PDFs (coming soon)"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [{name = "Daniel Majer", email = "majerdaniel93@gmail.com"}]
